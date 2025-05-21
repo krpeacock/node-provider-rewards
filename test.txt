@@ -1,0 +1,94 @@
+Principal ID,Wallet Address,Monthly Rewards (ICP)
+6nbcy-kprg6-ax3db-kh3cz-7jllk-oceyh-jznhs-riguq-fvk6z-6tsds-rqe,33f777364eaafde71d47bb7153110378033599c4571221e5643afd3d,13935.6295878
+7ryes-jnj73-bsyu4-lo6h7-lbxk5-x4ien-lylws-5qwzl-hxd5f-xjh3w-mqe,2aa9960c2c437a67f64113603ae06d8dcc337e4dea8b21b5ad30bcea,12828.91022021
+wwdbq-xuqhf-eydzu-oyl7p-ga565-zm7s7-yrive-ozgsy-zzgh3-qwb3j-cae,9953f7179f972446706f57bae03b6d5c17e84b1794591b066590dd06,12106.15471485
+rbn2y-6vfsb-gv35j-4cyvy-pzbdu-e5aum-jzjg6-5b4n5-vuguf-ycubq-zae,77713e32ec25a5c08070bc3db9ca3cbb0a4c9ccd1cf43fa50fcfcc59,11981.93111236
+egb3e-rzi2e-vpsmm-akysp-l2owk-4dgst-b5hmg-xrkwa-cr3uk-zlzds-mae,8b75f16dacf2a0a216ca1f746d3ab235cecc64f1300175b80df0fcd3,
+izmhk-lpjum-uo4oy-lviba-yctpc-arg4b-2ywim-vgoiu-gqaj2-gskmw-2qe,43fcf5c1be79ff92f9c7e44165868d2932eb82f3d9b98cab16edeec2,11338.2269904
+sixix-2nyqd-t2k2v-vlsyz-dssko-ls4hl-hyij4-y7mdp-ja6cj-nsmpf-yae,77d0acc4c8da71ac7651b528914473f6f86533f267621d08916c3d5a,13096.71694764
+sma3p-ivkif-hz7nu-ngmvq-ibnjg-nubke-zf6gh-wbnfc-2dlng-l3die-zqe,16f79e0a12d3e5eca8d03db512f258daf2b0e3b362c5784e197f25af,4035.38490495
+sqhxa-h6ili-qkwup-ohzwn-yofnm-vvnp5-kxdhg-saabw-rvua3-xp325-zqe,4a022422eec98fef88737e61d9abc64ea89c0d1438540f11b93fbdc1,3779.4089968
+wdnqm-clqti-im5yf-iapio-avjom-kyppl-xuiza-oaz6z-smmts-52wyg-5ae,9745c45b325886895dfbfe41b23ca42f9e4b4b4e45b9473e2d7adb50,7702.6700008
+ucjqj-jmbj3-rs4aq-ekzpw-ltjs3-zrcma-t6r3t-m5wxc-j5yrj-unwoj-mae,ef8be46ea0c92591a9087b90cee923bd08dd237968093bdc72a794f6,12828.91022021
+7a4u2-gevsy-5c5fs-hsgri-n2kdz-dxxwf-btcfp-jykro-l4y7c-7xky2-aqe,03923d86f89df8a9b1629f1c241963c3464182979263ccce10f12a61,7558.8179936
+ks7ow-zvs7i-ratdk-azq34-zio2b-gbekj-qjicg-pfhp3-ovhgu-k5qql-dae,30364d3b9720bef7873e1a0dbc731faaf7576e24f2a5b87d5b03fa46,8070.7698099
+6r5lw-l7db7-uwixn-iw5en-yy55y-ilbtq-e6gcv-g22r2-j3g6q-y37jk-jqe,c81cb7e8820e954f082a48897aaea4b9601e11ee3a5a09276d95fc9d,12828.91022021
+wdjjk-blh44-lxm74-ojj43-rvgf4-j5rie-nm6xs-xvnuv-j3ptn-25t4v-6ae,No Account,13009.59909655
+usau7-upgoh-sg464-6qnso-lud42-nxho6-ith26-a2jhq-q5bgy-ajeou-4ae,2dcfe2c4dc1986944c27d8853d699c141c83a7f278a62c1b71b5047b,
+bvcsg-3od6r-jnydw-eysln-aql7w-td5zn-ay5m6-sibd2-jzojt-anwag-mqe,No Account,12264.25748164
+7at4h-nhtvt-a4s55-jigss-wr2ha-ysxkn-e6w7x-7ggnm-qd3d5-ry66r-cae,8b75f16dacf2a0a216ca1f746d3ab235cecc64f1300175b80df0fcd3,12286.84359119
+i7dto-bgkj2-xo5dx-cyrb7-zkk5y-q46eh-gz6iq-qkgyc-w4qte-scgtb-6ae,3851340c5094534e0c23c2a1f4d7d24fdfce713b391889496b9a5958,7987.95407491
+eipr5-izbom-neyqh-s3ec2-52eww-cyfpg-qfomg-3dpwj-4pffh-34xcu-7qe,No Account,11338.2269904
+spp3m-vawt7-3gyh6-pjz5d-6zidf-up3qb-yte62-otexv-vfpqg-n6awf-lqe,No Account,11850.1788067
+ulyfm-vkxtj-o42dg-e4nam-l4tzf-37wci-ggntw-4ma7y-d267g-ywxi6-iae,No Account,7742.49934123
+7ws2n-wqorv-vmo4m-5e222-n42c3-hk43s-ei3kp-4hpbn-xlkzo-jgv7i-tqe,No Account,705.28598316
+kos24-5xact-6aror-uofg2-tnvt6-dq3bk-c2c5z-jtptt-jbqvc-lmegy-qae,No Account,5347.92560027
+hzqcb-iiagd-4erjo-qn7rq-syqro-zztl6-cpble-atnkd-2c6bg-bxjoa-qae,No Account,808.23989674
+unqqg-no4b2-vbyad-ytik2-t3vly-3e57q-aje2t-sjb5l-bd4ke-chggn-uqe,No Account,10746.57809685
+r3yjn-kthmg-pfgmb-2fngg-5c7d7-t6kqg-wi37r-j7gy6-iee64-kjdja-jae,No Account,15601.84152079
+efem5-kmwaw-xose7-zzhgg-6bfif-twmcw-csg7a-lmqvn-wrdou-mjwlb-vqe,No Account,2195.99279395
+ihbuj-erwnc-tkjux-tqtnv-zkoar-uniy2-sk2go-xfpkc-znbb4-seukm-wqe,No Account,6348.06934473
+xo7ih-nswlt-hbq3n-v5ixi-etu7j-sasg6-fjf4p-zx6or-cc7c3-pnh7t-2ae,No Account,
+7uioy-xitfw-yqcko-5gpya-3lpsw-dw7zt-dyyyf-wfqif-jvi76-fdbkg-cqe,No Account,5893.65585759
+g2ax6-jrkmb-3zuh3-jibtb-q5xoq-njrgo-5utbc-j2o7g-zfq2w-yyhky-dqe,No Account,2738.81785915
+nmdd6-rouxw-55leh-wcbkn-kejit-njvje-p4s6e-v64d3-nlbjb-vipul-mae,No Account,5711.35731763
+eybf4-6t6bb-unfb2-h2hhn-rrfi2-cd2vs-phksn-jdmbn-i463m-4lzds-vqe,No Account,3134.0799118
+2byzn-q2crt-hgczo-eruff-6p7af-pemor-n2z4z-6d2sd-wvdqa-yqvxb-mqe,No Account,
+hk7eo-22zam-kqmsx-dtfbj-k5i6f-jg65h-micpf-2cztc-t2eqk-efgvx-vqe,No Account,908.57427872
+optdi-nwa4m-hly3k-6ua4n-sqyxf-yahvb-wps77-ddayn-r7zcz-edla5-7qe,No Account,3291.67427603
+4jjya-hlyyc-s766p-fd6gr-d6tvv-vo3ah-j5ptx-i73gw-mwgyd-rw6w2-rae,No Account,3750.54905756
+cp5ib-twnmx-h4dvd-isef2-tu44u-kb2ka-fise5-m4hta-hnxoq-k45mm-hqe,No Account,4529.41773547
+jz47c-irtey-dr2nb-wienh-emhaz-jo6ua-gsbho-t2z5j-l7kbf-5i7p5-5ae,No Account,
+fwnmn-zn7yt-5jaia-fkxlr-dzwyu-keguq-npfxq-mc72w-exeae-n5thj-oae,No Account,4225.79011051
+mme7u-zxs3z-jq3un-fbaly-nllcz-toct2-l2kp3-larrb-gti4r-u2bmo-dae,No Account,3291.67427603
+4fedi-eu6ue-nd7ts-vnof5-hzg66-hgzl7-liy5n-3otyp-h7ipw-owycg-uae,No Account,2338.82159662
+4dibr-2alzr-h6kva-bvwn2-yqgsl-o577t-od46o-v275p-a2zov-tcw4f-eae,No Account,12505.79656368
+i3cfo-s2tgu-qe5ym-wk7e6-y7ura-pptgu-kevuf-2feh7-z4enq-5hz4s-mqe,No Account,1835.03398671
+py2kr-ipr2p-ryh66-x3a3v-5ts6u-7rfhf-alkna-ueffh-hz5ox-lt6du-qqe,No Account,3291.67427603
+zy4m7-z5mhs-zfkpl-zlsjl-blrbx-mvvmq-5z4zu-mf7eq-hhv7o-ezfro-3ae,No Account,6058.31550643
+64xe5-tx2s3-4gjmj-pnozr-fejw2-77y5y-rhcjk-glnmx-62brf-qin5q-pqe,No Account,7773.79196579
+trxbq-wy5xi-3y27q-bkpaf-mhi2m-puexs-yatgt-nhwiy-dh6jy-rolw5-zqe,No Account,761.43486327
+4r6qy-tljxg-slziw-zoteo-pboxh-vlctz-hkv2d-7zior-u3pxm-mmuxb-cae,No Account,2901.37398833
+ivf2y-crxj4-y6ewo-un35q-a7pum-wqmbw-pkepy-d6uew-bfmff-g5yxe-eae,No Account,2901.37398833
+mjnyf-lzqq6-s7fzb-62rqm-xzvge-5oa26-humwp-dvwxp-jxxkf-hoel7-fqe,No Account,1182.3098868
+3oqw6-vmpk2-mlwlx-52z5x-e3p7u-fjlcw-yxc34-lf2zq-6ub2f-v63hk-lae,No Account,2901.37398833
+cgmhq-c4zja-yov4u-zeyao-64ua5-idlhb-ezcgr-cultv-3vqjs-dhwo7-rqe,No Account,3118.81430991
+dhywe-eouw6-hstpj-ahsnw-xnjxq-cmqks-47mrg-nnncb-3sr5d-rac6m-nae,No Account,2901.37398833
+diyay-s4rfq-xnx23-zczwi-nptra-5254n-e4zn6-p7tqe-vqhzr-sd4gd-bqe,No Account,2901.37398833
+33aps-ovxje-mwpux-cy2hh-f2qwp-5tzxs-2edbb-gblfn-ev5pv-cfnvj-pqe,No Account,
+amsdj-4ss2k-wwcae-kroro-ippwx-lcro4-ysoha-uqlvc-3267j-vt3fy-yqe,No Account,
+n6w7e-4cio3-an35h-hntwl-zzg4p-krqjk-yfmni-q7jiu-bage2-hef5b-pae,No Account,
+qsdw4-ao5ye-6rtq4-y3zhm-icjbj-lutd2-sbejz-4ajqz-pcflr-xrhsg-jae,No Account,2587.55922131
+veamq-6zmtx-dtdky-ctoun-gokvu-cr6zm-ffsky-dz35w-e2euw-zvv7e-vae,No Account,
+eatbv-nlydd-n655c-g7j7p-gnmpz-pszdg-6e6et-veobv-ftz2y-4m752-vqe,No Account,2151.8990616
+pa5mu-yxsey-b4yrk-bodka-dhjnm-a3nx4-w2grw-3b766-ddr6e-nupu4-pqe,No Account,1100.57037993
+otzuu-dldzs-avvu2-qwowd-hdj73-aocy7-lacgi-carzj-m6f2r-ffluy-fae,No Account,2388.02016616
+j2tnr-f5tmm-afnyl-762n7-o272x-ji2xi-bcpld-ihimy-fw52d-2zqov-xae,a56577f858c2f629ad30d6e2790d4e9f8fe46fde924b56e7ce32588641deead6,
+vegae-c4chr-aetfj-7gzuh-c23sx-u2paz-vmvbn-bcage-pu7lu-mptnn-eqe,No Account,10260.8522492
+qipsq-44ztq-4oxob-dulxs-35tho-zjf5o-onu2b-sjuhk-4jd7x-yfdhz-qae,No Account,
+6sq7t-knkul-fko6h-xzvnf-ktbvr-jhx7r-hapzr-kjlek-whugy-zt6ip-xqe,No Account,7637.7704821
+kf7dx-5wayj-3p2u4-yd4hf-m2en4-np75j-tta25-wqe7y-rlm6s-nqceb-7ae,No Account,
+s5nvr-ipdxf-xg6wd-ofacm-7tl4i-nwjzx-uulum-cugwb-kbpsa-wrsgs-cae,No Account,2388.02016616
+6ryfx-xszlo-xpvyj-b7vx6-m4erk-zwdkc-5lzfw-fty7k-arl66-uc3jk-nae,No Account,
+b7yyj-o7vc6-hdbzl-eggkm-bp2hg-3jmcv-5j5nn-t6zkq-ino4b-cvyde-yqe,No Account,
+kgfpq-4th36-lvnpn-ayygq-hikoq-dndag-vvafx-msvg5-aczmu-pkzsv-7ae,No Account,
+kn4u4-unhbe-qwud4-ki6lq-o4try-6l2gv-yrxmg-vw6st-fmlss-nsztj-7qe,No Account,
+34cav-6s7rb-uwa3c-awdly-5md4r-lwueh-atzbn-unqpe-c5ope-f3nqj-wae,No Account,
+7ne6c-3ahs2-76so4-te6hs-oq4mv-zhz4c-pqj2b-rxjmq-q56vn-tvpgj-2ae,No Account,
+znw2p-4cx6u-ocqls-277iu-2lkir-xjy7g-4s3sj-sjy6j-mtlay-rnnra-yqe,No Account,
+2cfu2-qyug6-y4cme-lvj3c-6fs65-cbti4-ea6ig-nkaoj-fsbte-7n5gp-wae,No Account,
+fnzev-s6xem-s2myy-rrxoa-2mpp6-oet33-pmnba-ajo75-qhfdw-esys7-7qe,No Account,
+x7uok-pi537-itm37-unjn3-ewkze-kuetg-kptap-nuqak-auq7z-tn5ey-dqe,No Account,9290.4197252
+w4buy-lgwzr-pccs7-huzhh-qqnws-rns75-iaoox-jolrm-xs2ra-vdu3o-2qe,No Account,4276.30340673
+dodsd-rsjlg-sgekb-gr6mi-l6fck-tscwk-4jzgl-fwk4q-ncoyu-ulx53-aqe,No Account,7558.8179936
+glrjs-2dbzh-owbdd-fpp5e-eweoz-nsuto-e3jmk-tl42c-wem4f-qfpfa-qqe,No Account,15324.67532467
+rpfvr-s3kuw-xdqrr-pvuuj-hc7hl-olytw-yxlie-fmr74-sr572-6gdqx-iqe,No Account,14594.92888064
+wlxga-ebupj-sj2nf-g3sii-75i6b-oh64s-qmq7u-gmros-vi2if-3ktdv-cqe,No Account,8944.09937888
+ss6oe-fm7b2-b5r57-y3x74-omrz5-d5pgy-5iwtw-4aew5-aqj3l-6ydra-wqe,No Account,7558.8179936
+2wxzd-qrbrs-ailta-kdtyb-ucg35-xcxd4-txevb-ot7hx-wiyus-szcca-nqe,No Account,8191.22906079
+c5svp-7pkmf-agz5x-536k7-r7rcw-4wn3a-eo7pt-ry7su-j42uq-bvnzf-iqe,No Account,
+ma7dp-gz4tg-3c2wv-pgnsv-wna7u-czvhu-fpu47-t4dr6-gzxql-wr2m2-qae,7f7b0dba89663ebfcbe1735286be0362f890a361d4ed74a1e024b9ba,8552.60681347
+2dgp4-h57n4-a4kgx-n4uun-huo3a-wbdlc-m57wd-jtkuh-g5vcc-fcbby-6qe,No Account,7558.8179936
+acqus-l4yyc-h44lw-grfxw-h7jqf-mtvt3-huwmj-4s372-sc5db-5nsfr-2ae,No Account,3993.97703745
+g7dkt-aapqq-j3hqt-xtiys-pwapz-idulp-nwagd-zibqm-caxa4-gc23t-3qe,No Account,8029.3619424
+dwka6-vtbfw-c6h7z-zwr5o-togu7-d5md2-qlji5-we6m3-rsub6-ikhxp-2ae,No Account,

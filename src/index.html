@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Provider Rewards App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Internet Computer Node Provider Rewards</h1>
+        
+        <div class="query-options">
+            <div class="info-card">
+                <h2>Rewards Data Options</h2>
+                <div class="option-card">
+                    <h3>Historical Rewards</h3>
+                    <p>Shows the <strong>most recent completed distribution</strong> of rewards that were actually minted and distributed to node providers.</p>
+                    <p>This uses <code>get_most_recent_monthly_node_provider_rewards</code> to retrieve historical data of the last time the NNS minted rewards.</p>
+                    <button id="fetchHistoricalRewards" class="btn-primary">Fetch Historical Rewards</button>
+                </div>
+                <div class="option-card">
+                    <h3>Simulated Current Rewards</h3>
+                    <p>Shows what rewards <strong>would be distributed if minted today</strong>, reflecting any proposals that have passed since the last distribution.</p>
+                    <p>This uses <code>get_monthly_node_provider_rewards</code> to simulate rewards based on the current 30-day-moving-average price of ICP and any new proposals.</p>
+                    <button id="fetchSimulatedRewards" class="btn-secondary">Simulate Current Rewards</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="hidden">Loading...</div>
+        <div id="error" class="hidden"></div>
+        <div id="dataSource" class="hidden"></div>
+        <div id="results">
+            <div id="summary" class="hidden">
+                <h2>Summary</h2>
+                <p>Timestamp: <span id="timestamp"></span></p>
+                <p>Node Providers: <span id="providerCount"></span></p>
+                <p>Total Rewards: <span id="totalRewards"></span></p>
+                <p>Registry Version: <span id="registryVersion"></span></p>
+                <p>Max Node Provider Rewards: <span id="maxRewards"></span></p>
+                <button id="downloadCsv" class="hidden">Download CSV</button>
+            </div>
+            <div id="csvPreview" class="hidden">
+                <h2>CSV Preview</h2>
+                <div class="button-group">
+                    <button id="copyTableCsv" class="btn-copy">Copy to Clipboard</button>
+                    <span id="copySuccess" class="copy-success hidden">Copied!</span>
+                </div>
+                <div class="csv-container">
+                    <table id="csvTable">
+                        <thead>
+                            <tr>
+                                <th>Principal ID</th>
+                                <th>Wallet Address</th>
+                                <th>Monthly Rewards (ICP)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="csvTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="rewardsDetails" class="hidden">
+                <h2>Rewards Details</h2>
+                <div id="rewardsList"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
