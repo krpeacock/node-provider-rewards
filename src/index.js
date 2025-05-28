@@ -121,7 +121,6 @@ function accountIdentifierToString(accountId) {
     return 'Invalid Account Format';
   }
 }
-
 // Helper function to check if reward_account is valid
 function isValidRewardAccount(rewardAccount) {
   try {
@@ -143,6 +142,7 @@ function isValidRewardAccount(rewardAccount) {
     return false;
   }
 }
+
 
 // Generate CSV data
 function generateCsvData(rewards) {
@@ -191,57 +191,7 @@ function generateCsvData(rewards) {
   return csvContent;
 }
 
-// Add diagnostic function to analyze reward accounts data
-function analyzeRewardAccounts(rewards) {
-  // Summary statistics
-  const stats = {
-    totalProviders: rewards.node_providers.length,
-    validAccounts: 0,
-    missingRewardAccount: 0,
-    emptyArray: 0,
-    noHashProperty: 0,
-    emptyHash: 0,
-    otherIssues: 0,
-    validPercentage: 0
-  };
-  
-  // Count different cases
-  rewards.node_providers.forEach(provider => {
-    try {
-      if (!provider.reward_account) {
-        stats.missingRewardAccount++;
-      } else if (!Array.isArray(provider.reward_account) || provider.reward_account.length === 0) {
-        stats.emptyArray++;
-      } else if (!provider.reward_account[0] || !provider.reward_account[0].hash) {
-        stats.noHashProperty++;
-      } else if (!provider.reward_account[0].hash.length) {
-        stats.emptyHash++;
-      } else {
-        // Valid account
-        stats.validAccounts++;
-      }
-    } catch (error) {
-      stats.otherIssues++;
-      console.error('Error analyzing reward account:', error);
-    }
-  });
-  
-  // Calculate percentage of valid accounts
-  stats.validPercentage = Math.round((stats.validAccounts / stats.totalProviders) * 100);
-  
-  // Log summary
-  console.log('======= REWARD ACCOUNTS ANALYSIS =======');
-  console.log(`Total providers: ${stats.totalProviders}`);
-  console.log(`Valid accounts: ${stats.validAccounts} (${stats.validPercentage}%)`);
-  console.log(`Missing reward_account: ${stats.missingRewardAccount}`);
-  console.log(`Empty arrays: ${stats.emptyArray}`);
-  console.log(`Missing hash property: ${stats.noHashProperty}`);
-  console.log(`Empty hash: ${stats.emptyHash}`);
-  console.log(`Other issues: ${stats.otherIssues}`);
-  console.log('======================================');
-  
-  return stats;
-}
+// Copy table data to clipboard as CSV
 
 // Copy table data to clipboard as CSV
 function copyTableToClipboard() {
@@ -362,10 +312,6 @@ function displayRewards(rewards, dataMode) {
   currentRewardsData = rewards;
   currentDataMode = dataMode;
   
-  // Run diagnostics on reward accounts and display stats
-  const stats = analyzeRewardAccounts(rewards);
-  displayAccountStats(stats);
-  
   // Set data source message
   if (dataMode === 'historical') {
     dataSourceEl.textContent = 'Showing HISTORICAL rewards from the most recent completed distribution';
@@ -421,40 +367,7 @@ function displayRewards(rewards, dataMode) {
   rewardsDetailsEl.classList.remove('hidden');
 }
 
-// Display account statistics in the UI
-function displayAccountStats(stats) {
-  // Get DOM elements
-  const accountStatsEl = document.getElementById('accountStats');
-  const validAccountsPercentageEl = document.getElementById('validAccountsPercentage');
-  const validAccountsEl = document.getElementById('validAccounts');
-  const emptyAccountsEl = document.getElementById('emptyAccounts');
-  const totalAccountsEl = document.getElementById('totalAccounts');
-  
-  // Set values
-  validAccountsPercentageEl.textContent = stats.validPercentage;
-  validAccountsEl.textContent = stats.validAccounts;
-  emptyAccountsEl.textContent = (stats.emptyArray + stats.missingRewardAccount + stats.noHashProperty + stats.emptyHash);
-  totalAccountsEl.textContent = stats.totalProviders;
-  
-  // Add warning if low percentage of valid accounts
-  if (stats.validPercentage < 50) {
-    // Create warning element if it doesn't exist
-    let warningEl = document.querySelector('.empty-account-warning');
-    if (!warningEl) {
-      warningEl = document.createElement('div');
-      warningEl.className = 'empty-account-warning';
-      warningEl.innerHTML = `
-        <strong>Note:</strong> Many node providers have empty reward accounts. 
-        This is normal in the IC system when providers haven't registered their wallet addresses yet.
-        Rewards for these providers will stay in the governance canister until they register a valid account.
-      `;
-      accountStatsEl.appendChild(warningEl);
-    }
-  }
-  
-  // Show the stats section
-  accountStatsEl.classList.remove('hidden');
-}
+// Utility to hide/reset UI elements before fetching
 
 // Utility to hide/reset UI elements before fetching
 function prepareUIForFetch() {
