@@ -173,7 +173,7 @@ function generateCsvData(rewards) {
         // Get default account for this principal
         const defaultAccount = getDefaultAccountId(provider.id[0]);
         walletAddress = defaultAccount ? 
-          `${accountIdentifierToString(defaultAccount)} (Default)` : 
+          `${accountIdentifierToString(defaultAccount)}` : 
           'No Account';
       } else {
         walletAddress = 'No Account';
@@ -316,7 +316,7 @@ function displayCsvPreview(rewards) {
         // Get default account for this principal
         const defaultAccount = getDefaultAccountId(provider.id[0]);
         walletAddress = defaultAccount ? 
-          `${accountIdentifierToString(defaultAccount)} (Default)` : 
+          `${accountIdentifierToString(defaultAccount)}` : 
           'No Account';
       } else {
         walletAddress = 'No Account';

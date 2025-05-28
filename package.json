@@ -11,17 +11,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dfinity/agent": "^0.15.6",
-    "@dfinity/candid": "^0.15.6",
+    "@dfinity/agent": "^2.4.1",
+    "@dfinity/candid": "^2.4.1",
     "@dfinity/ledger-icp": "^2.6.13",
-    "@dfinity/principal": "^0.15.6",
+    "@dfinity/principal": "^2.4.1",
     "@dfinity/utils": "^2.13.0"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^11.0.0",
-    "html-webpack-plugin": "^5.5.3",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "copy-webpack-plugin": "^13.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
   }
 }
