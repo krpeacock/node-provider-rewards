@@ -239,4 +239,54 @@ button:disabled {
     #csvTable th, #csvTable td {
         padding: 8px 5px;
     }
-} 
+}
+
+/* Account statistics styling */
+.account-stats {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 4px solid #6c757d;
+}
+
+.account-stats h3 {
+    margin-top: 0;
+    color: #495057;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.stat-breakdown {
+    font-size: 0.9rem;
+    color: #6c757d;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
+
+/* Empty account warning */
+.empty-account-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    max-width: 600px;
+}

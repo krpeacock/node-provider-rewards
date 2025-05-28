@@ -1,4 +1,6 @@
 import { Actor, HttpAgent } from '@dfinity/agent';
+import { AccountIdentifier } from '@dfinity/ledger-icp';
+import { Principal } from '@dfinity/principal';
 import { idlFactory } from './governance.did';
 
 // Constants
@@ -66,14 +68,80 @@ function principalToString(principal) {
   return principal.toString();
 }
 
+// CRC32 hash implementation for account ID calculation
+function crc32(bytes) {
+  const polynomial = 0xedb88320;
+  let crc = 0xffffffff;
+  
+  for (let i = 0; i < bytes.length; i++) {
+    crc ^= bytes[i];
+    for (let j = 0; j < 8; j++) {
+      crc = ((crc & 1) ? polynomial : 0) ^ (crc >>> 1);
+    }
+  }
+  
+  return (crc ^ 0xffffffff) >>> 0;
+}
+
+// Get default account ID from principal
+function getDefaultAccountId(principal) {
+  try {
+    if (!principal) return null;
+    
+    // Use the AccountIdentifier from @dfinity/ledger-icp
+    const accountIdentifier = AccountIdentifier.fromPrincipal({
+      principal: principal,
+      // Using default subaccount (all zeros)
+      subAccount: undefined
+    });
+    
+    // Return the bytes in a format compatible with our existing code
+    return { hash: accountIdentifier.bytes };
+  } catch (error) {
+    console.warn('Error calculating default account ID:', error);
+    return null;
+  }
+}
+
 // Convert account identifier to string
 function accountIdentifierToString(accountId) {
-  if (!accountId || !accountId.hash) return 'No Account';
-  
-  // Convert Uint8Array to hex string
-  return Array.from(accountId.hash)
-    .map(b => b.toString(16).padStart(2, '0'))
-    .join('');
+  try {
+    // Ensure the accountId exists and has a valid hash property
+    if (!accountId || !accountId.hash || accountId.hash.length === 0) {
+      return 'No Account';
+    }
+    
+    // Create an AccountIdentifier from the bytes
+    const accountIdentifier = new AccountIdentifier(accountId.hash);
+    
+    // Return the hex representation
+    return accountIdentifier.toHex();
+  } catch (error) {
+    console.warn('Error converting account identifier to string:', error);
+    return 'Invalid Account Format';
+  }
+}
+
+// Helper function to check if reward_account is valid
+function isValidRewardAccount(rewardAccount) {
+  try {
+    // Check if reward_account exists
+    if (!rewardAccount) return false;
+    
+    // Check if reward_account[0] exists (many are empty arrays)
+    if (Array.isArray(rewardAccount) && rewardAccount.length === 0) return false;
+    
+    // Check if reward_account[0] exists
+    if (!rewardAccount[0]) return false;
+    
+    // Check if reward_account[0].hash exists and is an array/Uint8Array with content
+    if (!rewardAccount[0].hash || !rewardAccount[0].hash.length) return false;
+    
+    return true;
+  } catch (error) {
+    console.warn('Error validating reward account:', error);
+    return false;
+  }
 }
 
 // Generate CSV data
@@ -93,8 +161,24 @@ function generateCsvData(rewards) {
   // Generate rows for each node provider
   rewards.node_providers.forEach(provider => {
     const principalId = provider.id && provider.id[0] ? principalToString(provider.id[0]) : 'Unknown';
-    const walletAddress = provider.reward_account && provider.reward_account[0] ? 
-      accountIdentifierToString(provider.reward_account[0]) : 'No Account';
+    
+    let walletAddress;
+    
+    // Check for explicit reward account
+    if (isValidRewardAccount(provider.reward_account)) {
+      walletAddress = accountIdentifierToString(provider.reward_account[0]);
+    } else {
+      // No explicit reward account - calculate the default account from principal ID
+      if (provider.id && provider.id[0]) {
+        // Get default account for this principal
+        const defaultAccount = getDefaultAccountId(provider.id[0]);
+        walletAddress = defaultAccount ? 
+          `${accountIdentifierToString(defaultAccount)} (Default)` : 
+          'No Account';
+      } else {
+        walletAddress = 'No Account';
+      }
+    }
     
     // Find reward amount for this provider or use 0
     const rewardAmount = rewardsByProvider[principalId] || 0;
@@ -105,6 +189,58 @@ function generateCsvData(rewards) {
   });
   
   return csvContent;
+}
+
+// Add diagnostic function to analyze reward accounts data
+function analyzeRewardAccounts(rewards) {
+  // Summary statistics
+  const stats = {
+    totalProviders: rewards.node_providers.length,
+    validAccounts: 0,
+    missingRewardAccount: 0,
+    emptyArray: 0,
+    noHashProperty: 0,
+    emptyHash: 0,
+    otherIssues: 0,
+    validPercentage: 0
+  };
+  
+  // Count different cases
+  rewards.node_providers.forEach(provider => {
+    try {
+      if (!provider.reward_account) {
+        stats.missingRewardAccount++;
+      } else if (!Array.isArray(provider.reward_account) || provider.reward_account.length === 0) {
+        stats.emptyArray++;
+      } else if (!provider.reward_account[0] || !provider.reward_account[0].hash) {
+        stats.noHashProperty++;
+      } else if (!provider.reward_account[0].hash.length) {
+        stats.emptyHash++;
+      } else {
+        // Valid account
+        stats.validAccounts++;
+      }
+    } catch (error) {
+      stats.otherIssues++;
+      console.error('Error analyzing reward account:', error);
+    }
+  });
+  
+  // Calculate percentage of valid accounts
+  stats.validPercentage = Math.round((stats.validAccounts / stats.totalProviders) * 100);
+  
+  // Log summary
+  console.log('======= REWARD ACCOUNTS ANALYSIS =======');
+  console.log(`Total providers: ${stats.totalProviders}`);
+  console.log(`Valid accounts: ${stats.validAccounts} (${stats.validPercentage}%)`);
+  console.log(`Missing reward_account: ${stats.missingRewardAccount}`);
+  console.log(`Empty arrays: ${stats.emptyArray}`);
+  console.log(`Missing hash property: ${stats.noHashProperty}`);
+  console.log(`Empty hash: ${stats.emptyHash}`);
+  console.log(`Other issues: ${stats.otherIssues}`);
+  console.log('======================================');
+  
+  return stats;
 }
 
 // Copy table data to clipboard as CSV
@@ -168,8 +304,24 @@ function displayCsvPreview(rewards) {
   // Generate rows for each node provider
   rewards.node_providers.forEach(provider => {
     const principalId = provider.id && provider.id[0] ? principalToString(provider.id[0]) : 'Unknown';
-    const walletAddress = provider.reward_account && provider.reward_account[0] ? 
-      accountIdentifierToString(provider.reward_account[0]) : 'No Account';
+    
+    let walletAddress;
+    
+    // Check for explicit reward account
+    if (isValidRewardAccount(provider.reward_account)) {
+      walletAddress = accountIdentifierToString(provider.reward_account[0]);
+    } else {
+      // No explicit reward account - calculate the default account from principal ID
+      if (provider.id && provider.id[0]) {
+        // Get default account for this principal
+        const defaultAccount = getDefaultAccountId(provider.id[0]);
+        walletAddress = defaultAccount ? 
+          `${accountIdentifierToString(defaultAccount)} (Default)` : 
+          'No Account';
+      } else {
+        walletAddress = 'No Account';
+      }
+    }
     
     // Find reward amount for this provider or use 0
     const rewardAmount = rewardsByProvider[principalId] || 0;
@@ -209,6 +361,10 @@ function displayRewards(rewards, dataMode) {
   // Store rewards data globally
   currentRewardsData = rewards;
   currentDataMode = dataMode;
+  
+  // Run diagnostics on reward accounts and display stats
+  const stats = analyzeRewardAccounts(rewards);
+  displayAccountStats(stats);
   
   // Set data source message
   if (dataMode === 'historical') {
@@ -263,6 +419,41 @@ function displayRewards(rewards, dataMode) {
   // Show sections
   summaryEl.classList.remove('hidden');
   rewardsDetailsEl.classList.remove('hidden');
+}
+
+// Display account statistics in the UI
+function displayAccountStats(stats) {
+  // Get DOM elements
+  const accountStatsEl = document.getElementById('accountStats');
+  const validAccountsPercentageEl = document.getElementById('validAccountsPercentage');
+  const validAccountsEl = document.getElementById('validAccounts');
+  const emptyAccountsEl = document.getElementById('emptyAccounts');
+  const totalAccountsEl = document.getElementById('totalAccounts');
+  
+  // Set values
+  validAccountsPercentageEl.textContent = stats.validPercentage;
+  validAccountsEl.textContent = stats.validAccounts;
+  emptyAccountsEl.textContent = (stats.emptyArray + stats.missingRewardAccount + stats.noHashProperty + stats.emptyHash);
+  totalAccountsEl.textContent = stats.totalProviders;
+  
+  // Add warning if low percentage of valid accounts
+  if (stats.validPercentage < 50) {
+    // Create warning element if it doesn't exist
+    let warningEl = document.querySelector('.empty-account-warning');
+    if (!warningEl) {
+      warningEl = document.createElement('div');
+      warningEl.className = 'empty-account-warning';
+      warningEl.innerHTML = `
+        <strong>Note:</strong> Many node providers have empty reward accounts. 
+        This is normal in the IC system when providers haven't registered their wallet addresses yet.
+        Rewards for these providers will stay in the governance canister until they register a valid account.
+      `;
+      accountStatsEl.appendChild(warningEl);
+    }
+  }
+  
+  // Show the stats section
+  accountStatsEl.classList.remove('hidden');
 }
 
 // Utility to hide/reset UI elements before fetching
@@ -352,4 +543,4 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchSimulatedRewardsBtn.addEventListener('click', fetchSimulatedRewards);
   downloadCsvBtn.addEventListener('click', downloadCsv);
   copyTableCsvBtn.addEventListener('click', copyTableToClipboard);
-}); 
+});
